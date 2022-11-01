@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="game.css">
+  <link href="http://fonts.cdnfonts.com/css/depixel" rel="stylesheet">
+  <script src="Fudge/FudgeCore.js"></script>
+  <script src="FudgeStory/FudgeStory.js"></script>
+  <script src="./build/game.js"></script>
+  <title>Visual Novel WiSe 22/23</title>
+</head>
+
+<body>
+  <scene>
+
+    <dialog type="splash" open>
+      <img id="FudgeStoryLogo" theme="dark" /> <!-- use "light" or "dark" -->
+        <div>
+            <div>
+                <p>
+                    Klick mich, um das Spiel zu starten!
+                </p>
+            </div>
+        </div>
+    </dialog>
+
+    <canvas></canvas>
+
+    <speech>
+      <name></name>
+      <content></content>
+    </speech>
+
+    <dialog type="text">
+      The content of a page of text for reading
+    </dialog>
+
+  </scene>
+</body>
+
+</html>
