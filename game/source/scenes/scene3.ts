@@ -11,16 +11,17 @@ namespace Game {
 
         // haunted house ambience
         ƒS.Sound.play(sounds.windInside, 1, true);
-        ƒS.Sound.play(sounds.floorboardCreaking, 1, true);
 
-        // show ghost
-        await ƒS.Character.animate(characters.Ghost, characters.Ghost.pose.neutral, ghostAnimation());
+        await ƒS.Sound.fade(sounds.floorboardCreaking, 1, 1, true);
 
         // ghost event
-        ƒS.Sound.play(sounds.ghost, 1, true);
+        await ƒS.Sound.fade(sounds.ghost, 1, 1, true);
 
         // giggle event
         ƒS.Sound.play(sounds.giggle, 1, true);
+
+        // show ghost
+        await ƒS.Character.animate(characters.Ghost, characters.Ghost.pose.neutral, ghostAnimation());
 
 
         /*

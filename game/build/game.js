@@ -231,13 +231,13 @@ var Game;
         await Game.ƒS.update(1);
         // haunted house ambience
         Game.ƒS.Sound.play(Game.sounds.windInside, 1, true);
-        Game.ƒS.Sound.play(Game.sounds.floorboardCreaking, 1, true);
-        // show ghost
-        await Game.ƒS.Character.animate(Game.characters.Ghost, Game.characters.Ghost.pose.neutral, Game.ghostAnimation());
+        await Game.ƒS.Sound.fade(Game.sounds.floorboardCreaking, 1, 1, true);
         // ghost event
-        Game.ƒS.Sound.play(Game.sounds.ghost, 1, true);
+        await Game.ƒS.Sound.fade(Game.sounds.ghost, 1, 1, true);
         // giggle event
         Game.ƒS.Sound.play(Game.sounds.giggle, 1, true);
+        // show ghost
+        await Game.ƒS.Character.animate(Game.characters.Ghost, Game.characters.Ghost.pose.neutral, Game.ghostAnimation());
         /*
         await ƒS.Character.show(characters.Sticky, characters.Sticky.pose.happy, ƒS.positions.bottomcenter);
         ƒS.update();
