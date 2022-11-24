@@ -92,3 +92,9 @@ speech name {
     color: rgb(164, 119, 190);
     margin-bottom: 10px;
 }
+
+.gameMenuCSSClass {
+    margin-top: -100vh;
+    background-color: red;
+    color: blue;
+}

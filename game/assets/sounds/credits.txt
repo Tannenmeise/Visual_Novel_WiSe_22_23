@@ -1,0 +1,5 @@
+ghost.wav: https://freesound.org/people/klankbeeld/sounds/262810/
+floorboard_creaking.wav: https://freesound.org/people/Benboncan/sounds/101381/
+wind_inside.wav: https://freesound.org/people/InspectorJ/sounds/376415/
+wind_outside.wav: https://freesound.org/people/spoonbender/sounds/244942/
+giggle: https://freesound.org/people/wolfdoctor/sounds/578760/
