@@ -65,3 +65,6 @@ declare namespace Game {
 declare namespace Game {
     function scene3(): ƒS.SceneReturn;
 }
+declare namespace Game {
+    function scene4(): ƒS.SceneReturn;
+}

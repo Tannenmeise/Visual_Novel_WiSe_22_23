@@ -145,7 +145,8 @@ namespace Game {
         let scenes: ƒS.Scenes = [
             //{ scene: scene1, name: "scene 1" },
             //{ scene: scene2, name: "scene 2" },
-            { scene: scene3, name: "scene 3" }
+            //{ scene: scene3, name: "scene 3" },
+            { scene: scene4, name: "scene 4" }
         ];
 
         let uiElement: HTMLElement = document.querySelector("[type=interface]");

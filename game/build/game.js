@@ -136,7 +136,8 @@ var Game;
         let scenes = [
             //{ scene: scene1, name: "scene 1" },
             //{ scene: scene2, name: "scene 2" },
-            { scene: Game.scene3, name: "scene 3" }
+            //{ scene: scene3, name: "scene 3" },
+            { scene: Game.scene4, name: "scene 4" }
         ];
         let uiElement = document.querySelector("[type=interface]");
         Game.dataForSave = Game.ƒS.Progress.setData(Game.dataForSave, uiElement);
@@ -246,5 +247,42 @@ var Game;
         */
     }
     Game.scene3 = scene3;
+})(Game || (Game = {}));
+var Game;
+(function (Game) {
+    async function scene4() {
+        console.log("scene4 started");
+        // SPEECH
+        let text = {
+            Sticky: {
+                T0000: "Robot Fight"
+            }
+        };
+        Game.ƒS.Speech.hide();
+        await Game.ƒS.Location.show(Game.locations.sky);
+        await Game.ƒS.update();
+        await Game.ƒS.Character.show(Game.characters.Sticky, Game.characters.Sticky.pose.happy, Game.ƒS.positionPercent(70, 110));
+        await Game.ƒS.update();
+        await Game.ƒS.Speech.tell(Game.characters.Sticky, text.Sticky.T0000);
+        let graph = Game.ƒS.Base.getGraph();
+        // LOADING OBJECT
+        let node = new Game.ƒ.Node("Quad");
+        node.addComponent(new Game.ƒ.ComponentTransform(Game.ƒ.Matrix4x4.TRANSLATION(new Game.ƒ.Vector3(0, 0, 0))));
+        let mesh = new Game.ƒ.MeshObj("RobotMesh");
+        await mesh.load("assets/objects/test.obj");
+        //let mesh: ƒ.MeshQuad = new ƒ.MeshQuad();
+        let cmpMesh = new Game.ƒ.ComponentMesh(mesh);
+        node.addComponent(cmpMesh);
+        let mtrSolidWhite = new Game.ƒ.Material("SolidWhite", Game.ƒ.ShaderLit, new Game.ƒ.CoatColored(Game.ƒ.Color.CSS("RED")));
+        let cmpMaterial = new Game.ƒ.ComponentMaterial(mtrSolidWhite);
+        node.addComponent(cmpMaterial);
+        graph.getChild(1).addChild(node);
+        node.mtxLocal.translateX(150);
+        node.mtxLocal.translateY(-100);
+        node.mtxLocal.scale(new Game.ƒ.Vector3(100, 100, 100));
+        await Game.ƒS.update();
+        console.log(graph.getChild(1));
+    }
+    Game.scene4 = scene4;
 })(Game || (Game = {}));
 //# sourceMappingURL=game.js.map
