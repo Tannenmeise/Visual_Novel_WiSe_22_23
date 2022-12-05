@@ -15,7 +15,7 @@ namespace Game {
             name: "Item 1",
             description: "Ein Item",
             image: "Assets/Graphics/...", // 91px x 60px
-            static: true // true = consumable item -> consum by clicking it in inventory | false = non-consumable item
+            static: true // false = consumable item -> consum by clicking it in inventory | true = non-consumable item
         }
     };
 
