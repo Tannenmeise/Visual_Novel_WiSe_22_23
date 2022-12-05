@@ -2,42 +2,48 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="game.css">
-  <link href="http://fonts.cdnfonts.com/css/depixel" rel="stylesheet">
-  <script src="Fudge/FudgeCore.js"></script>
-  <script src="FudgeStory/FudgeStory.js"></script>
-  <script src="./build/game.js"></script>
-  <title>Visual Novel WiSe 22/23</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="game.css">
+    <link href="http://fonts.cdnfonts.com/css/depixel" rel="stylesheet">
+    <script src="Fudge/FudgeCore.js"></script>
+    <script src="FudgeStory/FudgeStory.js"></script>
+    <script src="./build/game.js"></script>
+    <title>Visual Novel WiSe 22/23</title>
 </head>
 
 <body>
-  <scene>
+    <scene>
 
-    <dialog type="splash" open>
-      <img id="FudgeStoryLogo" theme="dark" /> <!-- use "light" or "dark" -->
-        <div>
+        <dialog type="splash" open>
+            <img id="FudgeStoryLogo" theme="dark" /> <!-- use "light" or "dark" -->
             <div>
-                <p>
-                    Klick mich, um das Spiel zu starten!
-                </p>
+                <div>
+                    <p>
+                        Klick mich, um das Spiel zu starten!
+                    </p>
+                </div>
             </div>
-        </div>
-    </dialog>
+        </dialog>
 
-    <canvas></canvas>
+        <canvas></canvas>
 
-    <speech>
-      <name></name>
-      <content></content>
-    </speech>
+        <speech>
+            <name></name>
+            <content></content>
+        </speech>
 
-    <dialog type="text">
-      The content of a page of text for reading
-    </dialog>
+        <dialog type="text">
+            The content of a page of text for reading
+        </dialog>
 
-  </scene>
+        <dialog type="inventory">
+            <button></button>
+            <ul>
+            </ul>
+        </dialog>
+
+    </scene>
 </body>
 
 </html>

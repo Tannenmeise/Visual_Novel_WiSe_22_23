@@ -4,6 +4,14 @@ declare namespace Game {
     let dataForSave: {
         nameProtagonist: string;
     };
+    let items: {
+        item1: {
+            name: string;
+            description: string;
+            image: string;
+            static: boolean;
+        };
+    };
     function ghostAnimation(): ƒS.AnimationDefinition;
     function getAnimation(): ƒS.AnimationDefinition;
     let transitions: {

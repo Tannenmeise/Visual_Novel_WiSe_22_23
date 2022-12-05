@@ -7,6 +7,16 @@ namespace Game {
     // put everything that should be saved/reused when saving and loading a game
     export let dataForSave = {
         nameProtagonist: ""
+        // punktesystem hier rein. z.b. aisaka points: 2
+    };
+
+    export let items = {
+        item1: {
+            name: "Item 1",
+            description: "Ein Item",
+            image: "Assets/Graphics/...", // 91px x 60px
+            static: true // true = consumable item -> consum by clicking it in inventory | false = non-consumable item
+        }
     };
 
     export function ghostAnimation(): ƒS.AnimationDefinition {
@@ -143,9 +153,10 @@ namespace Game {
         buttonFunctionalities("Close");
         // scene hierarchy
         let scenes: ƒS.Scenes = [
-            //{ scene: scene1, name: "scene 1" },
-            //{ scene: scene2, name: "scene 2" },
-            //{ scene: scene3, name: "scene 3" },
+            { scene: scene0, name: "scene 0" },
+            { scene: scene1, name: "scene 1" },
+            { scene: scene2, name: "scene 2" },
+            { scene: scene3, name: "scene 3" },
             { scene: scene4, name: "scene 4" }
         ];
 

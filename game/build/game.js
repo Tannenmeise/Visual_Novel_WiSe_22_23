@@ -7,6 +7,15 @@ var Game;
     // put everything that should be saved/reused when saving and loading a game
     Game.dataForSave = {
         nameProtagonist: ""
+        // punktesystem hier rein. z.b. aisaka points: 2
+    };
+    Game.items = {
+        item1: {
+            name: "Item 1",
+            description: "Ein Item",
+            image: "Assets/Graphics/...",
+            static: true // true = consumable item -> consum by clicking it in inventory | false = non-consumable item
+        }
     };
     function ghostAnimation() {
         return {
@@ -134,9 +143,10 @@ var Game;
         buttonFunctionalities("Close");
         // scene hierarchy
         let scenes = [
-            //{ scene: scene1, name: "scene 1" },
-            //{ scene: scene2, name: "scene 2" },
-            //{ scene: scene3, name: "scene 3" },
+            { scene: Game.scene0, name: "scene 0" },
+            { scene: Game.scene1, name: "scene 1" },
+            { scene: Game.scene2, name: "scene 2" },
+            { scene: Game.scene3, name: "scene 3" },
             { scene: Game.scene4, name: "scene 4" }
         ];
         let uiElement = document.querySelector("[type=interface]");
@@ -149,6 +159,15 @@ var Game;
 (function (Game) {
     async function scene0() {
         console.log("FudgeStory Template Scene starting!!");
+        Game.dataForSave.nameProtagonist = await Game.ƒS.Speech.getInput(); // Für Protagonist-Name Input
+        await Game.ƒS.Speech.tell(Game.characters.protagonist, "Hi, it's me!", true, "Player");
+        Game.ƒS.Speech.setTickerDelays(80, 5000);
+        let signalDelay3 = Game.ƒS.Progress.defineSignal([() => Game.ƒS.Progress.delay(3)]);
+        await Game.ƒS.Speech.tell(Game.characters.Sticky, "Hallo 1");
+        signalDelay3();
+        await Game.ƒS.Speech.tell(Game.characters.Sticky, "Hallo 2");
+        Game.ƒS.Inventory.add(Game.items.item1);
+        await Game.ƒS.Inventory.open();
     }
     Game.scene0 = scene0;
 })(Game || (Game = {}));
